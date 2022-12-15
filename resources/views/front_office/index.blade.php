@@ -2,6 +2,7 @@
 <html lang="zxx" class="no-js">
 
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
@@ -28,6 +29,20 @@
     <link rel="stylesheet" href="{{ asset('landing_page/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('landing_page/css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('landing_page/css/main.css') }}">
+
+    <style>
+        .question {
+            color: rgb(29, 27, 27);
+            font-size: 1.3em;
+        }
+
+        .option {
+            color: rgb(29, 27, 27);
+            font-size: 1.3em;
+            margin-left: 10px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -80,11 +95,12 @@
                     <div class="col-md-10 col-12">
                         <div class="banner-content text-center">
                             <h4 class="text-white mb-20 text-uppercase">Sistem Informasi Penerimaan Tamu Digital</h4>
-                            <h1 class="text-uppercase text-white">SIPENDI</h1>
+                            <h1 class="text-uppercase text-white">S I P E N D I</h1>
                             <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                                 eiusmod temp <br>
                                 or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
                             <a href="#buku_tamu" class="text-uppercase header-btn">Isi Buku Tamu</a>
+                            <a href="#feedback" class="text-uppercase header-btn">Isi Survey Kepasan</a>
                         </div>
                     </div>
 
@@ -98,12 +114,13 @@
                 <div class="row fullscreen justify-content-center align-items-center">
                     <div class="col-md-10 col-12">
                         <div class="banner-content text-center">
-                            <h4 class="text-white mb-20 text-uppercase">Discover the Colorful World</h4>
-                            <h1 class="text-uppercase text-white">New Trip</h1>
+                            <h4 class="text-white mb-20 text-uppercase">Sistem Informasi Penerimaan Tamu Digital</h4>
+                            <h1 class="text-uppercase text-white">S I P E N D I</h1>
                             <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                                 eiusmod temp <br>
                                 or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
                             <a href="#buku_tamu" class="text-uppercase header-btn">Isi Buku Tamu</a>
+                            <a href="#feedback" class="text-uppercase header-btn">Isi Survey Kepasan</a>
                         </div>
                     </div>
                 </div>
@@ -116,12 +133,13 @@
                 <div class="row fullscreen justify-content-center align-items-center">
                     <div class="col-md-10 col-12">
                         <div class="banner-content text-center">
-                            <h4 class="text-white mb-20 text-uppercase">Discover the Colorful World</h4>
-                            <h1 class="text-uppercase text-white">New Experience</h1>
+                            <h4 class="text-white mb-20 text-uppercase">Sistem Informasi Penerimaan Tamu Digital</h4>
+                            <h1 class="text-uppercase text-white">S I P E N D I</h1>
                             <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                                 eiusmod temp <br>
                                 or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
                             <a href="#buku_tamu" class="text-uppercase header-btn">Isi Buku Tamu</a>
+                            <a href="#feedback" class="text-uppercase header-btn">Isi Survey Kepasan</a>
                         </div>
                     </div>
                 </div>
@@ -186,27 +204,34 @@
                     </div>
                 </div>
             </div>
-            <form class="form-area " id="myForm" action="#" method="post" class="contact-form text-right">
+            <form class="form-area " id="bukuTamuForm" action="#" method="post"
+                class="contact-form text-right">
                 <div class="row">
                     <div class="col-lg-6 form-group">
                         <input placeholder="Nama Lengkap" onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'Nama Lengkap'" class="common-input mb-20 form-control"
-                            required="" type="text">
+                            required="" type="text" id="nama" name="nama">
 
-                        <input name="email" placeholder="Enter email address"
-                            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
-                            class="common-input mb-20 form-control" required="" type="email">
+                        <input placeholder="Nomor HP" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Nomor HP'" class="common-input mb-20 form-control"
+                            required="" type="text" id="hp" name="hp">
+                        <input placeholder="Alamat Lengkap" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Alamat Lengkap'" class="common-input mb-20 form-control"
+                            required="" type="text" id="alamat" name="alamat">
+                        <select class="form-control" id="struktural" name="struktural"
+                            class="common-input mb-20 form-control">
+                            <option value="0">Pilih Orang Tujuan</option>
+                            @foreach ($list_struktural as $struktural)
+                                <option value="{{ $struktural['id'] }}">{{ $struktural['jabatan'] }}</option>
+                            @endforeach
+                        </select>
 
-                        <input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control"
-                            required="" type="text">
                     </div>
                     <div class="col-lg-6 form-group">
-                        <textarea class="common-textarea mt-10 form-control" name="message" placeholder="Messege"
-                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                        <button class="primary-btn mt-20">Send Message<span
-                                class="lnr lnr-arrow-right"></span></button>
+                        <textarea class="common-textarea mt-10 form-control" id="keperluan" name="keperluan" placeholder="Keperluan"
+                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Keperluan'" required=""></textarea>
+                        <button class="primary-btn mt-20" id="btn_simpan_buku_tamu"
+                            name="btn_simpan_buku_tamu">Simpan<span class="lnr lnr-arrow-right"></span></button>
                         <div class="alert-msg">
                         </div>
                     </div>
@@ -329,27 +354,162 @@
                     </div>
                 </div>
             </div>
-            <form class="form-area " id="myForm" action="mail.php" method="post"
+            <form class="form-area " id="kuisionerForm" action="#" method="post"
                 class="contact-form text-right">
+                @csrf
                 <div class="row">
-                    <div class="col-lg-6 form-group">
-                        <input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control"
-                            required="" type="text">
+                    <div class="col-lg-12 form-group">
+                        <input placeholder="Nama Lengkap" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Nama Lengkap'" class="common-input mb-20 form-control"
+                            value="" type="text" id="nama" name="nama"
+                            style="color: rgb(29, 27, 27);font-size: 1.3em;">
 
-                        <input name="email" placeholder="Enter email address"
-                            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
-                            class="common-input mb-20 form-control" required="" type="email">
+                        <input placeholder="Usia" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usia'"
+                            class="common-input mb-20 form-control" value="" type="number" id="usia"
+                            name="usia" style="color: rgb(29, 27, 27);font-size: 1.3em;" required>
 
-                        <input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control"
-                            required="" type="text">
+                        <input placeholder="Pendidikan Terakhir" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Pendidikan Terakhir'" class="common-input mb-20 form-control"
+                            value="" type="text" id="pendidikan" name="pendidikan"
+                            style="color: rgb(29, 27, 27);font-size: 1.3em;" required>
+
+                        <input placeholder="Pekerjaan" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Pekerjaan'" class="common-input mb-20 form-control"
+                            value="" type="text" id="pekerjaan" name="pekerjaan"
+                            style="padding-bottom: ;margin-bottom: 70px;color: rgb(29, 27, 27);font-size: 1.3em;"
+                            required>
+
+
+                        <p class="question">Bagaimana menurut saudara tentang prosedur pelayanan di MAN 2 Kuningan ?
+                        </p>
+                        <input type="radio" id="1a" name="no_1" value="4"><label for="1a"
+                            class="option">Sangat Mudah</label><br>
+                        <input type="radio" id="1b" name="no_1" value="3"><label for="1b"
+                            class="option">Mudah</label><br>
+                        <input type="radio" id="1c" name="no_1" value="2"><label for="1c"
+                            class="option">Cukup Mudah</label><br>
+                        <input type="radio" id="1d" name="no_1" value="1"><label for="1d"
+                            class="option">Tidak Mudah</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana menurut saudara tentang persyaratan yang harus dipenuhi dalam
+                            pelayanan di MAN 2
+                            Kuningan ?</p>
+                        <input type="radio" id="2a" name="no_2" value="4"><label for="2a"
+                            class="option">Sangat Mudah</label><br>
+                        <input type="radio" id="2b" name="no_2" value="3"><label for="2b"
+                            class="option">Mudah</label><br>
+                        <input type="radio" id="2c" name="no_2" value="2"><label for="2c"
+                            class="option">Cukup Mudah</label><br>
+                        <input type="radio" id="2d" name="no_2" value="1"><label for="2d"
+                            class="option">Tidak Mudah</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana pendapat saudara tentang waktu pelayanan di MAN 2 Kuningan ?</p>
+                        <input type="radio" id="3a" name="no_3" value="4"><label class="option"
+                            for="3a" class="option">Sangat Cepat</label><br>
+                        <input type="radio" id="3b" name="no_3" value="3"><label for="3b"
+                            class="option">Cepat</label><br>
+                        <input type="radio" id="3c" name="no_3" value="2"><label for="3c"
+                            class="option">Cukup Cepat</label><br>
+                        <input type="radio" id="3d" name="no_3" value="1"><label for="3d"
+                            class="option">Lambat</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana pendapat saudara tentang biaya yang dikenakan penerima pelayanan
+                            di MAN 2 Kuningan
+                            ?</p>
+                        <input type="radio" id="4a" name="no_4" value="4"><label for="4a"
+                            class="option">Sangat Murah</label><br>
+                        <input type="radio" id="4b" name="no_4" value="3"><label for="4b"
+                            class="option">Murah</label><br>
+                        <input type="radio" id="4c" name="no_4" value="2"><label for="4c"
+                            class="option">Cukup Murah</label><br>
+                        <input type="radio" id="4d" name="no_4" value="1"><label for="4d"
+                            class="option">Mahal</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana hasil pelayanan yang diberikan di MAN 2 Kuningan ?</p>
+                        <input type="radio" id="5a" name="no_5" value="4"><label for="5a"
+                            class="option">Sangat Memuaskan</label><br>
+                        <input type="radio" id="5b" name="no_5" value="3"><label for="5b"
+                            class="option">Memuaskan</label><br>
+                        <input type="radio" id="5c" name="no_5" value="2"><label for="5c"
+                            class="option">Cukup Memuaskan</label><br>
+                        <input type="radio" id="5d" name="no_5" value="1"><label for="5d"
+                            class="option">Tidak Memuaskan</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana pendapat saudara tentang kedisiplinan petugas dalam memberikan
+                            pelayanan ?</p>
+                        <input type="radio" id="6a" name="no_6" value="4"><label for="6a"
+                            class="option">Sangat Disiplin</label><br>
+                        <input type="radio" id="6b" name="no_6" value="3"><label for="6b"
+                            class="option">Disiplin</label><br>
+                        <input type="radio" id="6c" name="no_6" value="2"><label for="6c"
+                            class="option">Cukup Disiplin</label><br>
+                        <input type="radio" id="6d" name="no_6" value="1"><label for="6d"
+                            class="option">Tidak Disiplin</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana pendapat saudara tentang kemampuan (pengetahuan) petugas dalam
+                            memberikan pelayanan ?</p>
+                        <input type="radio" id="7a" name="no_7" value="4"><label for="7a"
+                            class="option">Sangat Mampu</label><br>
+                        <input type="radio" id="7b" name="no_7" value="3"><label for="7b"
+                            class="option">Mampu</label><br>
+                        <input type="radio" id="7c" name="no_7" value="2"><label for="7c"
+                            class="option">Cukup Mampu</label><br>
+                        <input type="radio" id="7d" name="no_7" value="1"><label for="7d"
+                            class="option">Tidak Mampu</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana pendapat saudara tentang kenyamanan dan kebersihan di lingkungan
+                            MAN 2 Kuningan ?</p>
+                        <input type="radio" id="8a" name="no_8" value="4"><label for="8a"
+                            class="option">Sangat Nyaman</label><br>
+                        <input type="radio" id="8b" name="no_8" value="3"><label for="8b"
+                            class="option">Nyaman</label><br>
+                        <input type="radio" id="8c" name="no_8" value="2"><label for="8c"
+                            class="option">Cukup Nyaman</label><br>
+                        <input type="radio" id="8d" name="no_8" value="1"><label for="8d"
+                            class="option">Tidak Nyaman</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana pendapat saudara tentang pernyataan kesanggupan dan kewajiban
+                            dari pegawai di MAN 2 Kuningan dalam memberikan pelayanan sesuai dengan standar pelayanan ?
+                        </p>
+                        <input type="radio" id="9a" name="no_9" value="4"><label for="9a"
+                            class="option">Sangat Memuaskan</label><br>
+                        <input type="radio" id="9b" name="no_9" value="3"><label for="9b"
+                            class="option">Memuaskan</label><br>
+                        <input type="radio" id="9c" name="no_9" value="2"><label for="9c"
+                            class="option">Cukup Memuaskan</label><br>
+                        <input type="radio" id="9d" name="no_9" value="1"><label for="9d"
+                            class="option">Tidak Memuaskan</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana pendapat saudara tentang kemudahan menyampaikan pengaduan, sran
+                            dan masukan di MAN 2 Kuningan ?
+                        </p>
+                        <input type="radio" id="10a" name="no_10" value="4"><label for="10a"
+                            class="option">Sangat Mudah</label><br>
+                        <input type="radio" id="10b" name="no_10" value="3"><label for="10b"
+                            class="option">Mudah</label><br>
+                        <input type="radio" id="10c" name="no_10" value="2"><label for="10c"
+                            class="option">Cukup Mudah</label><br>
+                        <input type="radio" id="10d" name="no_10" value="1"><label for="10d"
+                            class="option">Tidak Mudah</label><br>
+                        <hr>
+
                     </div>
-                    <div class="col-lg-6 form-group">
-                        <textarea class="common-textarea mt-10 form-control" name="message" placeholder="Messege"
-                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                        <button class="primary-btn mt-20">Send Message<span
+                    <div class="col-lg-12 form-group">
+                        <p class="question">Saran dan Masukan :
+                        </p>
+                        <textarea class="common-textarea mt-10 form-control" style="color: rgb(29, 27, 27);font-size: 1.3em;" id="saran"
+                            name="saran" placeholder="Saran dan Masukan" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Saran dan masukan'" required=""></textarea>
+                        <button class="primary-btn mt-20" id="saveBtn" name="saveBtn">Kirim<span
                                 class="lnr lnr-arrow-right"></span></button>
                         <div class="alert-msg">
                         </div>
@@ -446,6 +606,20 @@
     <script src="{{ asset('landing_page/js/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('landing_page/js/waypoints.min.js') }}"></script>
     <script src="{{ asset('landing_page/js/main.js') }}"></script>
+
+    <script>
+        var inp = document.getElementsByTagName('input');
+        for (var i = inp.length - 1; i >= 0; i--) {
+            if ('radio' === inp[i].type) inp[i].checked = false;
+        }
+    </script>
+    <script>
+        const app_path = {
+            base_path: "{{ route('pelayanan.index') }}",
+        };
+    </script>
+    <script src="{{ asset('js/kuisioner.js') }}" defer></script>
+    <script src="{{ asset('js/buku_tamu.js') }}" defer></script>
 </body>
 
 </html>

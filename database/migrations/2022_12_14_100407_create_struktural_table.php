@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('office_buku_tamu', function (Blueprint $table) {
+        Schema::create('struktural', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_lengkap', 100);
-            $table->string('no_hp', 15);
-            $table->string('alamat', 200);
-            $table->bigInteger('id_struktural_tujuan');
-            $table->text('keperluan');
-            $table->tinyInteger('status')->default(0);
+            $table->string('jabatan', 100);
+            $table->string('keterangan', 200);
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('office_buku_tamu');
+        Schema::dropIfExists('struktural');
     }
 };
