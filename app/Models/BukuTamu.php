@@ -18,4 +18,9 @@ class BukuTamu extends Model
         'keperluan',
         'status',
     ];
+
+    public function struktural()
+    {
+        return $this->belongsTo(StrukturalModel::class, 'id_struktural_tujuan');
+    }
 }

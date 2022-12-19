@@ -107,15 +107,15 @@
                 </div>
             </div>
         </div>
-        <div class="item-slider relative"
+        {{-- <div class="item-slider relative"
             style="background: url({{ asset('landing_page/img/slider2.jpg') }});background-size: cover;">
             <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
             <div class="container">
                 <div class="row fullscreen justify-content-center align-items-center">
                     <div class="col-md-10 col-12">
                         <div class="banner-content text-center">
-                            <h4 class="text-white mb-20 text-uppercase">Sistem Informasi Penerimaan Tamu Digital</h4>
-                            <h1 class="text-uppercase text-white">S I P E N D I</h1>
+                            <h4 class="text-white mb-20 text-uppercase">Madrasah Aliyah Negeri 2 Kuningan</h4>
+                            <h1 class="text-uppercase text-white">GREEN SCHOOL</h1>
                             <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                                 eiusmod temp <br>
                                 or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
@@ -125,7 +125,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="item-slider relative"
             style="background: url({{ asset('landing_page/img/slider3.jpg') }});background-size: cover;">
             <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
@@ -133,8 +133,8 @@
                 <div class="row fullscreen justify-content-center align-items-center">
                     <div class="col-md-10 col-12">
                         <div class="banner-content text-center">
-                            <h4 class="text-white mb-20 text-uppercase">Sistem Informasi Penerimaan Tamu Digital</h4>
-                            <h1 class="text-uppercase text-white">S I P E N D I</h1>
+                            <h4 class="text-white mb-20 text-uppercase">Madrasah Aliyah Negeri 2 Kuningan</h4>
+                            <h1 class="text-uppercase text-white">ISLAMIC BOARDING SCHOOL</h1>
                             <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                                 eiusmod temp <br>
                                 or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
@@ -153,7 +153,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-40 col-lg-8">
                     <div class="title text-center">
-                        <h1 class="mb-10">Why Choose Us Your Fitness Builder</h1>
+                        <h1 class="mb-10">MAN 2 Kuningan : Islamic High School</h1>
                         <p>Who are in extremely love with eco friendly system.</p>
                     </div>
                 </div>
@@ -161,29 +161,36 @@
             <div class="single-info row mt-40">
                 <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
                     <div class="info-thumb">
-                        <img src="{{ asset('landing_page/img/about-img.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('landing_page/img/about-img.png') }}" class="img-fluid" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 no-padding info-rigth">
                     <div class="info-content">
-                        <h2 class="pb-30">We Realize that <br>
-                            there are reduced <br>
-                            Wastege Stand out</h2>
+                        <h2 class="pb-30">Innovative <br>
+                            Methods <br>
+                            of Teaching</h2>
+                        <br>
                         <p>
-                            inappropriate behavior is often laughed off as “boys will be boys,” women face higher
-                            conduct standards – especially in the workplace. That’s why it’s crucial that, as women.
+                            MAN 2 Kuningan merupakan lembaga pendidikan di bawah naungan Kementerian Agama yang
+                            menerapkan perpaduan antara kurikulum kementerian Pendidikan dan Kebudayaan serta kurikulum
+                            Kementerian Agama. Selain menerapkan kurikulum dari Kementerian Pendidikan dan Kebudayaan
+                            seperti SMA umum lainnya, MAN 2 Kuningan juga menggunakan kurikulum dari Kementerian Agama
+                            untuk penguatan dalam bidang keagamaan.
                         </p>
                         <br>
                         <p>
-                            inappropriate behavior is often laughed off as “boys will be boys,” women face higher
-                            conduct standards – especially in the workplace. That’s why it’s crucial that, as women.
-                            inappropriate behavior is often laughed off as “boys will be boys,” women face higher
-                            conduct standards – especially in the workplace. That’s why it’s crucial that, as women.
+                            Dengan penerapan dua kurikulum ini, pelajaran di MAN
+                            2 Kuningan meliputi dua rumpun mata pelajaran umum dan rumpun pelajaran agama. Rumpun
+                            pelajaran umum meliputi pelajaran yang sama dengan pelajaran di SMA lainnya. Rumpun
+                            pelajaran agama meliputi Alquran Hadits, Fiqih, Aqidah Akhlak, SKI, dan Bahasa Arab. Dengan
+                            penggunaan kurikulum dari kementerian agama ini, MAN 2 Kuningan memiliki kelebihan
+                            dibandingkan dengan sekolah umum lainnya terutama dalam bidang keagamaan.
                         </p>
-                        <br>
                         <p>
-                            inappropriate behavior is often laughed off as “boys will be boys,” women face higher
-                            conduct standards – especially in the workplace. That’s why it’s crucial that, as women.
+                            Selain itu, MAN 2
+                            Kuningan pun berupaya untuk menjadi lembaga yang religius sebagai pencetak lulusan yang
+                            bertaqwa dan berakhlakul karimah. MAN 2 Kuningan selalu berusaha untuk menjadi lembaga yang
+                            memiliki keunggulan dan menjadi dambaan serta pilihan pertama masyarakat.
                         </p>
                     </div>
                 </div>
@@ -241,96 +248,6 @@
         </div>
     </section>
     <!-- End Form Buku Tamu -->
-
-
-    <!-- Start feature Area -->
-    <section class="feature-area section-gap" id="secvice">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="menu-content pb-60 col-lg-8">
-                    <div class="title text-center">
-                        <h1 class="mb-10">Fitur Keunikan Kami</h1>
-                        <p>Who are in extremely love with eco friendly system.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature mb-30">
-                        <div class="title d-flex flex-row pb-20">
-                            <span class="lnr lnr-user"></span>
-                            <h4><a href="#">Expert Technicians</a></h4>
-                        </div>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature mb-30">
-                        <div class="title d-flex flex-row pb-20">
-                            <span class="lnr lnr-license"></span>
-                            <h4><a href="#">Professional Service</a></h4>
-                        </div>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature mb-30">
-                        <div class="title d-flex flex-row pb-20">
-                            <span class="lnr lnr-phone"></span>
-                            <h4><a href="#">Great Support</a></h4>
-                        </div>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature">
-                        <div class="title d-flex flex-row pb-20">
-                            <span class="lnr lnr-rocket"></span>
-                            <h4><a href="#">Technical Skills</a></h4>
-                        </div>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature">
-                        <div class="title d-flex flex-row pb-20">
-                            <span class="lnr lnr-diamond"></span>
-                            <h4><a href="#">Highly Recomended</a></h4>
-                        </div>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature">
-                        <div class="title d-flex flex-row pb-20">
-                            <span class="lnr lnr-bubble"></span>
-                            <h4><a href="#">Positive Reviews</a></h4>
-                        </div>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End feature Area -->
 
     <!-- Start logo Area -->
     <section class="logo-area">
@@ -527,23 +444,20 @@
             <div class="row">
                 <div class="col-lg-5 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h6>About Us</h6>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            ut labore dolore magna aliqua.
-                        </p>
+                        {{-- <h6>About Us</h6> --}}
+
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <p class="footer-text">Copyright &copy;
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i
-                                class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                target="_blank">Colorlib</a>
+                            </script> All rights reserved | E-Office MAN 2<i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="http://man2kuningan.sch.id/" target="_blank">MAN
+                                2 Kuningan</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
-                <div class="col-lg-5  col-md-6 col-sm-6">
+                {{-- <div class="col-lg-5  col-md-6 col-sm-6">
                     <div class="single-footer-widget">
                         <h6>Newsletter</h6>
                         <p>Stay update with our latest</p>
@@ -575,8 +489,8 @@
                             </form>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                </div> --}}
+                {{-- <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
                     <div class="single-footer-widget">
                         <h6>Follow Us</h6>
                         <p>Let us be social</p>
@@ -587,7 +501,7 @@
                             <a href="#"><i class="fa fa-behance"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </footer>

@@ -28,4 +28,11 @@ $(document).ready(function () {
             },
         });
     });
+
+    $(document).on("click", ".btn_approve", function (e) {
+        e.preventDefault();
+        let id = $(this).val();
+
+        alert(id);
+    });
 });
