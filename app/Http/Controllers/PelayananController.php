@@ -50,7 +50,7 @@ class PelayananController extends Controller
             'id_struktural_tujuan'  => $request->struktural,
             'keperluan'    =>   $request->keperluan
         );
-        $post = BukuTamu::create($form_data);
+        $post = BukuTamu::updateOrCreate($form_data);
         return response()->json($post);
     }
 }

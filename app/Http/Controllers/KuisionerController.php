@@ -28,6 +28,7 @@ class KuisionerController extends Controller
                 "saran"
             )
                 ->groupBy("id")
+                ->orderBy("created_at", "DESC")
                 ->get();
             return DataTables::of($data)
                 ->addIndexColumn()

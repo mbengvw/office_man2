@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\BukuTamu;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Carbon;
 
 class BukuTamuController extends Controller
 {
@@ -31,6 +32,10 @@ class BukuTamuController extends Controller
                     }
 
                     return $actionBtn;
+                })
+                ->addColumn('tanggal', function ($row) {
+                    $tanggal = Carbon::parse($row['created_at'])->format('d-m-Y');
+                    return $tanggal;
                 })
                 ->rawColumns(['action'])
                 ->make(true);

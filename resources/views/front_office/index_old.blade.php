@@ -1,6 +1,91 @@
-@extends('main')
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
 
-@section('content')
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>E-Office MAn 2 Kuningan</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+        CSS
+        ============================================= -->
+    <link rel="stylesheet" href="{{ asset('landing_page/css/linearicons.css') }}">
+    <link rel="stylesheet" href="{{ asset('lannding_page/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing_page/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing_page/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing_page/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing_page/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing_page/css/main.css') }}">
+
+    <style>
+        .question {
+            color: rgb(29, 27, 27);
+            font-size: 1.3em;
+        }
+
+        .option {
+            color: rgb(29, 27, 27);
+            font-size: 1.3em;
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- start banner Area -->
+    <section class="banner-area" id="home">
+        <!-- Start Header Area -->
+        <header class="default-header">
+            <nav class="navbar navbar-expand-lg  navbar-light">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="text-white lnr lnr-menu"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end align-items-center"
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#buku_tamu">Buku Tamu</a></li>
+                            <li><a href="#feedback">Feedback</a></li>
+                            <!-- Dropdown -->
+                            {{-- <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Pages
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="generic.html">Generic</a>
+                                    <a class="dropdown-item" href="elements.html">Elements</a>
+                                </div>
+                            </li> --}}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- End Header Area -->
+    </section>
+
     <section class="default-banner active-blog-slider">
         <div class="item-slider relative"
             style="background: url({{ asset('landing_page/img/slider1.jpg') }});background-size: cover;">
@@ -126,16 +211,17 @@
                     </div>
                 </div>
             </div>
-            <form class="form-area " id="bukuTamuForm" action="#" method="post" class="contact-form text-right">
+            <form class="form-area " id="bukuTamuForm" action="#" method="post"
+                class="contact-form text-right">
                 <div class="row">
                     <div class="col-lg-6 form-group">
                         <input placeholder="Nama Lengkap" onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'Nama Lengkap'" class="common-input mb-20 form-control"
                             required="" type="text" id="nama" name="nama">
 
-                        <input placeholder="Nomor HP" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nomor HP'"
-                            class="common-input mb-20 form-control" required="" type="text" id="hp"
-                            name="hp">
+                        <input placeholder="Nomor HP" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Nomor HP'" class="common-input mb-20 form-control"
+                            required="" type="text" id="hp" name="hp">
                         <input placeholder="Alamat Lengkap" onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'Alamat Lengkap'" class="common-input mb-20 form-control"
                             required="" type="text" id="alamat" name="alamat">
@@ -185,7 +271,8 @@
                     </div>
                 </div>
             </div>
-            <form class="form-area " id="kuisionerForm" action="#" method="post" class="contact-form text-right">
+            <form class="form-area " id="kuisionerForm" action="#" method="post"
+                class="contact-form text-right">
                 @csrf
                 <div class="row">
                     <div class="col-lg-12 form-group">
@@ -206,7 +293,8 @@
                         <input placeholder="Pekerjaan" onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'Pekerjaan'" class="common-input mb-20 form-control"
                             value="" type="text" id="pekerjaan" name="pekerjaan"
-                            style="padding-bottom: ;margin-bottom: 70px;color: rgb(29, 27, 27);font-size: 1.3em;" required>
+                            style="padding-bottom: ;margin-bottom: 70px;color: rgb(29, 27, 27);font-size: 1.3em;"
+                            required>
 
 
                         <p class="question">Bagaimana menurut saudara tentang prosedur pelayanan di MAN 2 Kuningan ?
@@ -243,6 +331,19 @@
                             class="option">Cukup Cepat</label><br>
                         <input type="radio" id="3d" name="no_3" value="1"><label for="3d"
                             class="option">Lambat</label><br>
+                        <hr>
+
+                        <p class="question">Bagaimana pendapat saudara tentang biaya yang dikenakan penerima pelayanan
+                            di MAN 2 Kuningan
+                            ?</p>
+                        <input type="radio" id="4a" name="no_4" value="4"><label for="4a"
+                            class="option">Sangat Murah</label><br>
+                        <input type="radio" id="4b" name="no_4" value="3"><label for="4b"
+                            class="option">Murah</label><br>
+                        <input type="radio" id="4c" name="no_4" value="2"><label for="4c"
+                            class="option">Cukup Murah</label><br>
+                        <input type="radio" id="4d" name="no_4" value="1"><label for="4d"
+                            class="option">Mahal</label><br>
                         <hr>
 
                         <p class="question">Bagaimana hasil pelayanan yang diberikan di MAN 2 Kuningan ?</p>
@@ -405,18 +506,34 @@
         </div>
     </footer>
     <!-- End footer Area -->
+
+    <script src="{{ asset('landing_page/js/vendor/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('landing_page/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js') }}"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('landing_page/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('landing_page/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('landing_page/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('landing_page/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('landing_page/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('landing_page/js/slick.js') }}"></script>
+    <script src="{{ asset('landing_page/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('landing_page/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('landing_page/js/main.js') }}"></script>
+
     <script>
         var inp = document.getElementsByTagName('input');
         for (var i = inp.length - 1; i >= 0; i--) {
             if ('radio' === inp[i].type) inp[i].checked = false;
         }
     </script>
-@endsection
+    <script>
+        const app_path = {
+            base_path: "{{ route('pelayanan.index') }}",
+        };
+    </script>
+    <script src="{{ asset('js/kuisioner.js') }}" defer></script>
+    <script src="{{ asset('js/buku_tamu.js') }}" defer></script>
+</body>
 
-<script>
-    const app_path = {
-        base_path: "{{ route('pelayanan.index') }}",
-    };
-</script>
-<script src="{{ asset('js/kuisioner.js') }}" defer></script>
-<script src="{{ asset('js/buku_tamu.js') }}" defer></script>
+</html>

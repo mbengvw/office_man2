@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BukuTamuController;
 use App\Http\Controllers\KuisionerController;
 use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\WebcamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +42,7 @@ Route::get('admin/list-kuisioner', [KuisionerController::class, 'list_all'])->na
 
 Route::get('admin/test', [KuisionerController::class, 'test'])->name('admin.test');
 Route::get('admin/test2', [BukuTamuController::class, 'test'])->name('admin.test');
+
+
+Route::get('webcam', [WebcamController::class, 'index']);
+Route::post('webcam', [WebcamController::class, 'store'])->name('webcam.capture');

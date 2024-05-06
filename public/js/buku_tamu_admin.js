@@ -41,6 +41,7 @@ function fetchData() {
         processing: true,
         serverSide: true,
         ajax: app_path.base_path + "/list-buku-tamu",
+
         columns: [
             {
                 data: "DT_RowIndex",
@@ -57,6 +58,10 @@ function fetchData() {
             {
                 data: "alamat",
                 name: "alamat",
+            },
+            {
+                data: "tanggal",
+                name: "tanggal",
             },
             {
                 data: "struktural.jabatan",
