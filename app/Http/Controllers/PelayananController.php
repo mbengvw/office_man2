@@ -28,7 +28,7 @@ class PelayananController extends Controller
             'no_1'     =>  $request->no_1,
             'no_2'     =>  $request->no_2,
             'no_3'     =>  $request->no_3,
-            'no_4'     =>  $request->no_4,
+            
             'no_5'     =>  $request->no_5,
             'no_6'     =>  $request->no_6,
             'no_7'     =>  $request->no_7,

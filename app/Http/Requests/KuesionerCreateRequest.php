@@ -31,7 +31,7 @@ class KuesionerCreateRequest extends FormRequest
             'no_1'     =>  'required',
             'no_2'     =>  'required',
             'no_3'     =>  'required',
-            'no_4'     =>  'required',
+            
             'no_5'     =>  'required',
             'no_6'     =>  'required',
             'no_7'     =>  'required',
