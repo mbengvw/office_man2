@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="{{ asset('landing_page/css/animate.min.css') }}">
 <link rel="stylesheet" href="{{ asset('landing_page/css/owl.carousel.css') }}">
 <link rel="stylesheet" href="{{ asset('landing_page/css/main.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <style>
     .question {

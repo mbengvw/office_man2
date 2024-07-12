@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#btn_simpan_buku_tamu").click(function (e) {
+    $("#bukuTamuForm").on("submit", function (e) {
         e.preventDefault();
 
         $.ajaxSetup({
@@ -14,11 +14,16 @@ $(document).ready(function () {
             type: "POST",
             dataType: "json",
             success: function (data) {
-                alert(
-                    "Data telah berhasil disimpan.Mohon menunggu staff kami akan segera melayani"
-                );
+                // alert(
+                //     "Data telah berhasil disimpan.Mohon menunggu staff kami akan segera melayani"
+                // );
+                Swal.fire({
+                    icon: "info",
+                    title: "Berhasil...",
+                    text: "Data telah berhasil disimpan.Mohon menunggu staff kami akan segera melayani",
+                });
                 document.getElementById("bukuTamuForm").reset();
-                window.location = app_path.base_path;
+                // window.location = app_path.base_path;
             },
             error: function (data) {
                 alert(
