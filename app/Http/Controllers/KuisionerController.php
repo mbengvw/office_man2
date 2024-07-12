@@ -24,7 +24,7 @@ class KuisionerController extends Controller
                 "usia",
                 "pendidikan",
                 "pekerjaan",
-                DB::raw("(no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8+no_9+no_10)/40*100 as tingkat"),
+                DB::raw("(no_1+no_2+no_3+4+no_5+no_6+no_7+no_8+no_9+no_10)/40*100 as tingkat"),
                 "saran"
             )
                 ->groupBy("id")
