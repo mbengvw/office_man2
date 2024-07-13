@@ -37,6 +37,23 @@
 </head>
 
 <body>
+    {{-- Preloader --}}
+    {{-- <div class="preloader">
+        <div class="loader">
+            <div class="loader-outter"></div>
+            <div class="loader-inner"></div>
+
+            <div class="indicator">
+                <svg width="16px" height="12px">
+                    <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                </svg>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class="loading preloader-deactivate">Loading&#8230;</div>
+    {{-- End Preloader --}}
 
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
@@ -53,26 +70,6 @@
                     <li><a class="nav-link scrollto" href="#about">About</a></li>
                     <li><a class="nav-link scrollto" href="#buku_tamu">Buku Tamu</a></li>
                     <li><a class="nav-link scrollto " href="#feedback">Feedback</a></li>
-                    {{-- <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li> --}}
-                    {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li> --}}
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -157,8 +154,9 @@
                                     onblur="this.placeholder = 'Nomor HP'" class="common-input mb-20 form-control"
                                     required="" type="text" id="hp" name="hp">
                                 <input placeholder="Alamat Lengkap" onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = 'Alamat Lengkap'" class="common-input mb-20 form-control"
-                                    required="" type="text" id="alamat" name="alamat">
+                                    onblur="this.placeholder = 'Alamat Lengkap'"
+                                    class="common-input mb-20 form-control" required="" type="text"
+                                    id="alamat" name="alamat">
                                 <select class="form-control" id="struktural" name="struktural"
                                     class="common-input mb-20 form-control">
                                     <option value="">Pilih Orang Tujuan</option>
@@ -404,7 +402,16 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('landing_page/js/main.js') }}"></script>
-
+    <script>
+        $(window).on('load', function() {
+            //for use in production please remove this setTimeOut
+            setTimeout(function() {
+                $('.preloader').addClass('preloader-deactivate');
+            }, 3000);
+            //uncomment this line for use this snippet in production
+            //	$('.preloader').addClass('preloader-deactivate');
+        });
+    </script>
     <script>
         const app_path = {
             base_path: "{{ route('pelayanan.index') }}",

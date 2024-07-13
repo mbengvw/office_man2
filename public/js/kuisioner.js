@@ -14,6 +14,13 @@ $(document).ready(function () {
             url: app_path.base_path + "/store_kuisioner",
             type: "POST",
             dataType: "json",
+            cache: false,
+            beforeSend: function () {
+                $("#loading").removeClass("preloader-deactivate");
+            },
+            complete: function () {
+                $("#loading").addClass("preloader-deactivate");
+            },
             success: function (data) {
                 Swal.fire({
                     icon: "info",
@@ -21,7 +28,6 @@ $(document).ready(function () {
                     text: "Data telah berhasil disimpan.Terima kasih atas partisipasinya",
                 });
                 document.getElementById("kuisionerForm").reset();
-                // window.location = app_path.base_path;
             },
             error: function (data) {
                 Swal.fire({
