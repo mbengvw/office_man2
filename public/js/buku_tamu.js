@@ -13,17 +13,20 @@ $(document).ready(function () {
             url: app_path.base_path + "/store_buku_tamu",
             type: "POST",
             dataType: "json",
+            cache: false,
+            beforeSend: function () {
+                $(".loading").removeClass("preloader-deactivate");
+            },
+            complete: function () {
+                $(".loading").addClass("preloader-deactivate");
+            },
             success: function (data) {
-                // alert(
-                //     "Data telah berhasil disimpan.Mohon menunggu staff kami akan segera melayani"
-                // );
                 Swal.fire({
                     icon: "info",
                     title: "Berhasil...",
                     text: "Data telah berhasil disimpan.Mohon menunggu staff kami akan segera melayani",
                 });
                 document.getElementById("bukuTamuForm").reset();
-                // window.location = app_path.base_path;
             },
             error: function (data) {
                 alert(
