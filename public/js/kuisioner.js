@@ -16,10 +16,10 @@ $(document).ready(function () {
             dataType: "json",
             cache: false,
             beforeSend: function () {
-                $("#loading").removeClass("preloader-deactivate");
+                $(".loading").removeClass("preloader-deactivate");
             },
             complete: function () {
-                $("#loading").addClass("preloader-deactivate");
+                $(".loading").addClass("preloader-deactivate");
             },
             success: function (data) {
                 Swal.fire({
